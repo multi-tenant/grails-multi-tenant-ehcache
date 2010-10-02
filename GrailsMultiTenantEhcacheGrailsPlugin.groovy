@@ -1,50 +1,41 @@
 class GrailsMultiTenantEhcacheGrailsPlugin {
-    // the plugin version
-    def version = "0.1"
-    // the version or versions of Grails the plugin is designed for
-    def grailsVersion = "1.3.1 > *"
-    // the other plugins this plugin depends on
-    def dependsOn = [:]
-    // resources that are excluded from plugin packaging
-    def pluginExcludes = [
-            "grails-app/views/error.gsp"
-    ]
+  // the plugin version
+  def version = "1.0.0"
+  // the version or versions of Grails the plugin is designed for
+  def grailsVersion = "1.3.0 > *"
+  // the other plugins this plugin depends on
+  def dependsOn = [GrailsMultiTenantCore: "1.0.0"]
+  // resources that are excluded from plugin packaging
+  def pluginExcludes = [
+          "grails-app/views/error.gsp"
+  ]
+  def author = "Scott Ryan"
+  def authorEmail = "scryan@codehaus.com"
+  def title = "Plugin to support EH Cache 2nd level support when running in multiple database mode"
+  def description = '''This plugin provides a multi tenant implmentation of the EHCache provider to support one
+                       database per client.  This plugin also provides the managment screens for viewing and
+                       managing the caches.'''
+  // URL to the plugin's documentation
+  def documentation = "http://grails.org/plugin/grails-multi-tenant-ehcache"
 
-    // TODO Fill in these fields
-    def author = "Your name"
-    def authorEmail = ""
-    def title = "Plugin summary/headline"
-    def description = '''\\
-Brief description of the plugin.
-'''
+  def doWithWebDescriptor = { xml ->
+  }
 
-    // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/grails-multi-tenant-ehcache"
+  def doWithSpring = {
+  }
 
-    def doWithWebDescriptor = { xml ->
-        // TODO Implement additions to web.xml (optional), this event occurs before 
-    }
+  def doWithDynamicMethods = { ctx ->
+  }
 
-    def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
-    }
+  def doWithApplicationContext = { applicationContext ->
+  }
 
-    def doWithDynamicMethods = { ctx ->
-        // TODO Implement registering dynamic methods to classes (optional)
-    }
+  def onChange = { event ->
+    // watching is modified and reloaded. The event contains: event.source,
+    // event.application, event.manager, event.ctx, and event.plugin.
+  }
 
-    def doWithApplicationContext = { applicationContext ->
-        // TODO Implement post initialization spring config (optional)
-    }
-
-    def onChange = { event ->
-        // TODO Implement code that is executed when any artefact that this plugin is
-        // watching is modified and reloaded. The event contains: event.source,
-        // event.application, event.manager, event.ctx, and event.plugin.
-    }
-
-    def onConfigChange = { event ->
-        // TODO Implement code that is executed when the project configuration changes.
-        // The event is the same as for 'onChange'.
-    }
+  def onConfigChange = { event ->
+    // The event is the same as for 'onChange'.
+  }
 }
