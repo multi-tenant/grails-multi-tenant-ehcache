@@ -2,3 +2,4 @@
 *.iml
 plugin.xml
 .idea
+target
