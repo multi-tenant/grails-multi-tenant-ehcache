@@ -10,10 +10,23 @@
   <div>
     <g:link class="button-link" action="clearCacheStatistics" params="[cacheName:cacheName]"><g:message code="cacheManagement.clearCacheStatistics.link"/></g:link>
     <g:link class="button-link" action="clearCacheContents" params="[cacheName:cacheName]"><g:message code="cacheManagement.clearCacheContents.link"/></g:link>
-    <g:link class="button-link" action="cacheContents" params="[cacheName:cacheName]"><g:message code="cacheManagement.getCacheContents.link"/></g:link>
+    <g:link class="button-link" action="getCacheContents" params="[cacheName:cacheName]"><g:message code="cacheManagement.getCacheContents.link"/></g:link>
   </div>
   <div>
-    <g:render template="cacheSummary" model="[cacheSummary:cacheDetailMap]"/>
+    <table>
+      <thead>
+      <tr>
+        <th><g:message code="cacheManagement.cacheContents.label"/></th>
+      </tr>
+      </thead>
+      <tbody>
+      <g:each in="${cacheContents}" status="i" var="content">
+        <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+          <td>${content?.encodeAsHTML()}</td>
+        </tr>
+      </g:each>
+      </tbody>
+    </table>
   </div>
 </div>
 </body>
