@@ -1,18 +1,18 @@
 class MultiTenantEhcacheGrailsPlugin
 {
   // the plugin version
-  def version = "1.0.0-SNAPSHOT"
+  def version = "1.0.0"
   // the version or versions of Grails the plugin is designed for
   def grailsVersion = "1.3.0 > *"
   // the other plugins this plugin depends on
-  def dependsOn = [multiTenantCore : "1.0.0-SNAPSHOT"]
+  def dependsOn = [:]
   // resources that are excluded from plugin packaging
   def pluginExcludes = [
-          "grails-app/views/error.gsp"
+          "grails-app/views/error.gsp", "grails-app/domain/**"
   ]
   def author = "Scott Ryan"
   def authorEmail = "scryan@codehaus.org"
-  def title = "Plugin to support EH Cache 2nd level support when running in multiple database mode"
+  def title = "Multi Tenant EH Cache Support"
   def description = '''This plugin provides a multi tenant implmentation of the EHCache provider to support one
                        database per client.  This plugin also provides the managment screens for viewing and
                        managing the caches.'''
