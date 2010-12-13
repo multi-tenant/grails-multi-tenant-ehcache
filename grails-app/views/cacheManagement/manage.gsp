@@ -8,6 +8,7 @@
 <div>
   <h2><g:message code="cacheManagement.manage.heading"/></h2>
   <div>
+    <g:link class="button-link" action="manage"><g:message code="cacheManagement.home.link"/></g:link>
     <g:link class="button-link" action="clearAllStatistics"><g:message code="cacheManagement.clearAllStatistics.link"/></g:link>
     <g:link class="button-link" action="clearAllContents"><g:message code="cacheManagement.clearAllContents.link"/></g:link>
   </div>

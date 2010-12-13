@@ -43,7 +43,7 @@ class CacheManagementControllerMixin
   {
     def name = params.cacheName
     def cacheDetailMap = cacheManagementService.getCacheDetailMap(name)
-    [cacheDetailMap: cacheDetailMap, cacheName: params.cacheName]
+    render(view: 'cacheDetail', model: [cacheDetailMap: cacheDetailMap, cacheName: params.cacheName])
   }
   /**
    * This will get the current contents of the named cache.
@@ -63,7 +63,7 @@ class CacheManagementControllerMixin
   def clearAllStatistics =
   {
     cacheManagementService.clearAllStatistics()
-    redirect(action: "manage")
+    redirect(controller: params.controller, action: "manage")
   }
   /**
    * This will clear out all caches for the current manager.
@@ -72,7 +72,7 @@ class CacheManagementControllerMixin
   def clearAllContents =
   {
     cacheManagementService.clearAllCacheContents()
-    redirect(action: "manage")
+    redirect(controller: params.controller, action: "manage")
   }
   /**
    * This will clear out all caches for the selected tenant.
@@ -82,7 +82,7 @@ class CacheManagementControllerMixin
   def clearTenantCacheStatistics =
   {
     cacheManagementService.clearTenantStatistics(params.tenantId)
-    redirect(action: "tenantCacheInfo", params: [tenantId: params.tenantId])
+    redirect(controller: params.controller, action: "tenantCacheInfo", params: [tenantId: params.tenantId])
   }
   /**
    * This will clear out all caches for the selected tenant.
@@ -92,7 +92,7 @@ class CacheManagementControllerMixin
   def clearTenantCacheContents =
   {
     cacheManagementService.clearTenantCacheContents(params.tenantId)
-    redirect(action: "tenantCacheInfo", params: [tenantId: params.tenantId])
+    redirect(controller: params.controller, action: "tenantCacheInfo", params: [tenantId: params.tenantId])
   }
   /**
    * This will clear the cache for a single named cache.
@@ -103,7 +103,7 @@ class CacheManagementControllerMixin
   {
     def name = params.cacheName
     cacheManagementService.clearCacheContents(name)
-    redirect(action: "tenantCacheInfo", params: [tenantId: params.tenantId])
+    redirect(controller: params.controller, action: "tenantCacheInfo", params: [tenantId: params.tenantId])
   }
   /**
    * This will clear the cache for a single named cache.
@@ -114,6 +114,6 @@ class CacheManagementControllerMixin
   {
     def name = params.cacheName
     cacheManagementService.clearCacheStatistics(name)
-    redirect(action: "tenantCacheInfo", params: [tenantId: params.tenantId])
+    redirect(controller: params.controller, action: "tenantCacheInfo", params: [tenantId: params.tenantId])
   }
 }

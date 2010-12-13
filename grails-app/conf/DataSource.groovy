@@ -9,7 +9,7 @@ hibernate {
   cache.use_query_cache = true
   //  cache.provider_class = 'net.sf.ehcache.hibernate.EhCacheProvider'
   // Configure the multi tenant provider
-  cache.provider_class = 'grails.pluign.multitenant.ehcache.cache.MultiTenantEhCacheProvider'
+  cache.provider_class = 'grails.plugin.multitenant.ehcache.cache.MultiTenantEhCacheProvider'
 }
 // environment specific settings
 environments {
