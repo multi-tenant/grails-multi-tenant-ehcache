@@ -1,4 +1,4 @@
-package grails.pluign.multitenant.ehcache.cache
+package grails.plugin.multitenant.ehcache.cache
 
 import grails.plugin.multitenant.core.util.TenantUtils
 

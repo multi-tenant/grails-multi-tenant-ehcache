@@ -1,4 +1,4 @@
-package grails.pluign.multitenant.ehcache.cache
+package grails.plugin.multitenant.ehcache.cache
 /**
  *
  * This class provides a multi tenant aware cache provider for the EhCache caching
