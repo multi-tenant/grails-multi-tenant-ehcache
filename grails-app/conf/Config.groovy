@@ -52,3 +52,5 @@ grails.naming.entries = [
                 maxIdle: "4"
         ]
 ]
+grails.views.default.codec="none" // none, html, base64
+grails.views.gsp.encoding="UTF-8"
